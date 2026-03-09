@@ -1,14 +1,12 @@
-import { Geist, Geist_Mono } from "next/font/google";
+// app/layout.jsx
+
+import { Jost } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const jost = Jost({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-jost",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], // সব ওয়েট চাইলে এটা রাখো, না হলে কমাও (যেমন: "400", "700")
 });
 
 export const metadata = {
@@ -19,11 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${jost.variable} antialiased`}>{children}</body>
     </html>
   );
 }
