@@ -33,6 +33,7 @@ const page = () => {
             <p className='text-sm leading-7.5 text-[#767676] pl-8'>Review And Submit Your Order</p>
           </div>
         </div>
+        {/* Add Content */}
       </div>
     </div>
   )
