@@ -67,7 +67,41 @@ const page = () => {
           </div>
         </div>
         {/* 2nd Box */}
-        <div className=""></div>
+        <div className="border-2 border-[#222222] px-10 pt-9.5 pb-7.5 w-225 mx-auto">
+          <h6 className='text-base font-medium text-[#222222] leading-6 mb-8'>ORDER DETAILS</h6>
+          <div className="flex items-center justify-between border-b border-[#E4E4E4] pb-3.5">
+            <p className='text-sm text-[#222222] font-medium leading-6'>PRODUCT</p>
+            <p className='text-sm text-[#222222] font-medium leading-6'>SUBTOTAL</p>
+          </div>
+          <div className="flex items-center justify-between pt-3.5">
+            <p className='text-sm text-[#767676] font-medium leading-6'>Zessi Dresses x2</p>
+            <p className='text-sm text-[#767676] font-medium leading-6'>$32.50</p>
+          </div>
+          <div className="flex items-center justify-between border-b border-[#E4E4E4] py-4">
+            <p className='text-sm text-[#767676] font-medium leading-6'>Kirby T-Shirt</p>
+            <p className='text-sm text-[#767676] font-medium leading-6'>$29.90</p>
+          </div>
+          <div className="flex items-center justify-between border-b border-[#E4E4E4] py-4">
+            <p className='text-sm text-[#222222] font-medium leading-6'>SUBTOTAL</p>
+            <p className='text-sm text-[#222222] font-medium leading-6'>$89.90</p>
+          </div>
+          <div className="flex items-center justify-between border-b border-[#E4E4E4] py-4">
+            <p className='text-sm text-[#222222] font-medium leading-6'>SHIPPING</p>
+            <p className='text-sm text-[#222222] leading-6'>Free shipping</p>
+          </div>
+          <div className="flex items-center justify-between border-b border-[#E4E4E4] py-4">
+            <p className='text-sm text-[#222222] font-medium leading-6'>VAT</p>
+            <p className='text-sm text-[#222222] font-medium leading-6'>$19</p>
+          </div>
+          <div className="flex items-center justify-between border-b border-[#E4E4E4] py-4">
+            <p className='text-sm text-[#222222] font-medium leading-6'>PAYMENT METHOD</p>
+            <p className='text-sm text-[#222222] font-medium leading-6'>Direct bank transfer</p>
+          </div>
+          <div className="flex items-center justify-between pt-4">
+            <p className='text-sm text-[#222222] font-medium leading-6'>TOTAL</p>
+            <p className='text-sm text-[#222222] font-medium leading-6'>$1319</p>
+          </div>
+        </div>
       </div>
     </div>
 
