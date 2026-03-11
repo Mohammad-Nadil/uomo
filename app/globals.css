@@ -12,6 +12,11 @@ body {
 /* font */
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --color-primary: #212529;
+  --color-accent: #d6001c;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
