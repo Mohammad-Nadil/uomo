@@ -36,7 +36,7 @@ const page = () => {
           </div>
         </div>
         {/* Add Content */}
-        <div className="flex justify-between items-start">
+        <div className="flex lg:flex-row flex-col justify-between items-start">
           {/* Left Side */}
           <div className="">
             <div className="flex items-center pb-2.5 border-b-2 border-[#E4E4E4] text-[#222222] text-sm font-medium leading-6">
@@ -88,14 +88,14 @@ const page = () => {
             {/* Cupon */}
             <div className="flex justify-between mt-8">
               <div className="border-2 border-[#E4E4E4] py-4 px-5 flex justify-between">
-                <input type="text" placeholder='Coupon Code' className='border-none outline-none w-[185px]' />
+                <input type="text" placeholder='Coupon Code' className='border-none outline-none w-46.25' />
                 <button className='cursor-pointer text-sm font-medium text-[#222222] leading-6 ml-10'>APPLY COUPON</button>
               </div>
               <button className="cursor-pointer text-sm font-medium text-[#222222] leading-6 px-13.75 pt-5.5 pb-3.5 bg-[#E4E4E4]">UPDATE CART</button>
             </div>
           </div>
           {/* Right Side */}
-          <div className="">
+          <div className="mt-7.5 lg:mt-0">
             <div className="px-10 pt-9.5 pb-5.5 border-[#222222] border-2">
               <h5 className='text-base text-[#222222] font-medium leading-5.75'>CART TOTALS</h5>
               <div className="flex mt-8 border-b border-[#E4E4E4] pb-3">
