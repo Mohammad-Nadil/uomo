@@ -4,7 +4,7 @@ import { RxCross2 } from "react-icons/rx";
 
 const page = () => {
   return (
-    <div className='py-25'>
+    <section className='py-25'>
       {/* Container */}
       <div className="max-w-352.5 mx-auto">
         {/* Header */}
@@ -139,7 +139,7 @@ const page = () => {
           </div>
         </div>
       </div>
-    </div >
+    </ >
   )
 }
 
