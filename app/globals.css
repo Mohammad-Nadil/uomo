@@ -12,9 +12,18 @@ body {
 /* font */
 @custom-variant dark (&:is(.dark *));
 
+/* font */
+:root {
+  --font-jost: var(--font-jost), system-ui, sans-serif;
+}
+body {
+  font-family: var(--font-jost);
+}
+/* font */
 @theme {
   --color-primary: #212529;
   --color-accent: #d6001c;
+  --color-secondary: #767676;
 }
 
 @theme inline {
@@ -43,10 +52,6 @@ body {
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
