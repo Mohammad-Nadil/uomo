@@ -12,6 +12,14 @@ body {
 /* font */
 @custom-variant dark (&:is(.dark *));
 
+/* font */
+:root {
+  --font-jost: var(--font-jost), system-ui, sans-serif;
+}
+body {
+  font-family: var(--font-jost);
+}
+/* font */
 @theme {
   --color-primary: #212529;
   --color-accent: #d6001c;
