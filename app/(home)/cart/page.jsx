@@ -12,27 +12,31 @@ const page = () => {
         {/* Top Slider */}
         <div className="flex items-center py-12.5">
           <div className="border-b-2 border-[#222222] pb-3 w-117.5">
-            <div className="flex items-center gap-x-2.5 text-lg text-[#222222] font-medium leading-6.5">
+            <div className="flex items-start gap-x-2.5 text-lg text-[#222222] font-medium leading-6.5">
               <h5>01</h5>
-              <h5>SHOPPING BAG</h5>
+              <div className="">
+                <h5>SHOPPING BAG</h5>
+                <p className='text-sm leading-7.5 text-[#767676] font-normal'>Manage Your Items List</p>
+              </div>
             </div>
-            <p className='text-sm leading-7.5 text-[#767676] pl-7.5'>Manage Your Items List</p>
           </div>
           <div className="border-b-2 border-[#E4E4E4] pb-3 w-117.5">
-
-            <div className="flex flex-row items-center gap-x-2.5 text-lg text-[#767676] font-medium leading-6.5">
+            <div className="flex flex-row items-start gap-x-2.5 text-lg text-[#767676] font-medium leading-6.5">
               <h5>02</h5>
-              <h5>SHIPPING AND CHECKOUT</h5>
+              <div className="">
+                <h5>SHIPPING AND CHECKOUT</h5>
+                <p className='text-sm leading-7.5 text-[#767676] font-normal'>Checkout Your Items List</p>
+              </div>
             </div>
-            <p className='text-sm leading-7.5 text-[#767676] pl-8'>Checkout Your Items List</p>
           </div>
-
           <div className="border-b-2 border-[#E4E4E4] pb-3 w-117.5">
-            <div className="flex items-center gap-x-2.5 text-lg text-[#767676] font-medium leading-6.5">
+            <div className="flex items-start gap-x-2.5 text-lg text-[#767676] font-medium leading-6.5">
               <h5>03</h5>
-              <h5>CONFIRMATION</h5>
+              <div className="">
+                <h5>CONFIRMATION</h5>
+                <p className='text-sm leading-7.5 text-[#767676] font-normal'>Review And Submit Your Order</p>
+              </div>
             </div>
-            <p className='text-sm leading-7.5 text-[#767676] pl-8'>Review And Submit Your Order</p>
           </div>
         </div>
         {/* Add Content */}
@@ -91,7 +95,7 @@ const page = () => {
                 <input type="text" placeholder='Coupon Code' className='border-none outline-none w-46.25' />
                 <button className='cursor-pointer text-sm font-medium text-[#222222] leading-6 ml-10'>APPLY COUPON</button>
               </div>
-              <button className="cursor-pointer text-sm font-medium text-[#222222] leading-6 px-13.75 pt-5.5 pb-3.5 bg-[#E4E4E4]">UPDATE CART</button>
+              <button className="cursor-pointer text-sm font-medium text-[#222222] leading-6 px-13.75 py-4 bg-[#E4E4E4]">UPDATE CART</button>
             </div>
           </div>
           {/* Right Side */}
@@ -102,7 +106,6 @@ const page = () => {
                 <p className='text-sm text-[#222222] font-medium leading-6 mr-33.5'>SUBTOTAL</p>
                 <p className='text-sm text-[#222222] font-medium leading-6 mr-24.5'>$1300</p>
               </div>
-
               <div className="flex mt-4 border-b border-[#E4E4E4] pb-6">
                 <p className='text-sm text-[#222222] font-medium leading-6 mr-33.5'>SHIPPING</p>
                 <div className="">
@@ -122,18 +125,16 @@ const page = () => {
                   <button className='-ml-2 text-sm font-medium leading-6 text-[#222222] relative after:content-"" after:absolute after:left-1 after:bottom-0 after:w-17 after:h-0.5 after:bg-[#222222] cursor-pointer'>CHANGE ADDRESS</button>
                 </div>
               </div>
-
               <div className="flex mt-4 border-b border-[#E4E4E4] pb-3">
                 <p className='text-sm text-[#222222] font-medium leading-6 mr-43.5'>VAT</p>
                 <p className='text-sm text-[#222222] font-medium leading-6 mr-28.75'>$19</p>
               </div>
-
               <div className="flex mt-4">
                 <p className='text-sm text-[#222222] font-medium leading-6 mr-39.75'>TOTAL</p>
                 <p className='text-sm text-[#222222] font-medium leading-6 mr-25'>$1319</p>
               </div>
             </div>
-
+            {/* Checkout Button */}
             <button className="text-sm text-white font-medium leading-6 pl-34.75 pr-29.5 pt-5.25 pb-3.75 bg-[#222222] mt-5 cursor-pointer">PROCEED TO CHECKOUT</button>
           </div>
         </div>
