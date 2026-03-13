@@ -7,11 +7,24 @@ import placeholder from "@/public/images/img1.png";
 import { CiHeart, CiSearch, CiUser } from "react-icons/ci";
 import { IoBagOutline } from "react-icons/io5";
 import { HiOutlineBars3CenterLeft } from "react-icons/hi2";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group";
+import { Search } from "lucide-react";
+import CustomBtn from "./CustomBtn";
 
 export const NavLinks = ({ title, link, className, children }) => {
   return (
     <li
-      className={`text-xs md:text-sm font-medium relative group before:w-0 before:duration-300 hover:before:w-full before:h-0.5 before:absolute before:top-full before:left-0 before:bg-primary  before:z-10 ${className}`}
+      className={`text-xs md:text-sm font-medium relative group custom-underline ${className}`}
     >
       <Link href={link}>{title}</Link>
       {children}
@@ -20,24 +33,60 @@ export const NavLinks = ({ title, link, className, children }) => {
 };
 
 const Navbar = () => {
-  const menus = [
+  const mobileMenus = [
     {
       title: "home",
+      subMenus: [
+        "default",
+        "home fashion",
+        "home minimal",
+        "home modern",
+        "home parallax",
+      ],
     },
     {
       title: "shop",
+      subMenus: [
+        "shop grid",
+        "shop list",
+        "shop left sidebar",
+        "shop right sidebar",
+        "product detail",
+      ],
     },
     {
       title: "collection",
+      subMenus: [
+        "new arrivals",
+        "best sellers",
+        "summer collection",
+        "winter collection",
+        "limited edition",
+      ],
     },
     {
       title: "journal",
+      subMenus: [
+        "blog default",
+        "blog grid",
+        "blog list",
+        "single post",
+        "featured articles",
+      ],
     },
     {
       title: "lookbook",
+      subMenus: [
+        "lookbook grid",
+        "lookbook slider",
+        "lookbook masonry",
+        "seasonal lookbook",
+        "editor picks",
+      ],
     },
     {
       title: "pages",
+      subMenus: ["about us", "contact us", "faq", "store location", "404 page"],
     },
   ];
 
@@ -134,7 +183,7 @@ const Navbar = () => {
   return (
     <nav>
       <Container
-        className={`py-3 md:py-5 2xl:py-7.5 flex items-center justify-between`}
+        className={`h-14 sm:h-auto md:py-5 2xl:py-7.5 flex items-center justify-between`}
       >
         <div className="menu sm:hidden text-2xl ">
           <HiOutlineBars3CenterLeft />
@@ -147,7 +196,7 @@ const Navbar = () => {
             <NavLinks
               link={"/"}
               title={"home"}
-              className={"static hover:before:w-0!"}
+              className={"static! hover:before:w-0!"}
             >
               <div
                 className={`bottom-0 w-full px-3 pb-10 translate-y-full left-1/2 -translate-x-1/2  absolute z-50 flex justify-between  xl:gap-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300 bg-white`}
@@ -160,7 +209,7 @@ const Navbar = () => {
                     {item.subMenus.map((item, index) => (
                       <li
                         key={index}
-                        className="text-primary leading-normal cursor-pointer w-fit h-auto text-xs md:text-sm capitalize relative before:w-0 before:duration-300 hover:before:w-full before:h-0.5 before:absolute before:top-full before:left-0 before:bg-primary  before:z-10 "
+                        className="text-primary leading-normal cursor-pointer w-fit h-auto text-xs md:text-sm capitalize relative custom-underline "
                       >
                         {item}
                       </li>
@@ -180,7 +229,7 @@ const Navbar = () => {
                     </h2>
                     <Link
                       href={"/"}
-                      className="text-primary  cursor-pointer w-fit text-sm capitalize relative before:w-0 before:duration-300 hover:before:w-full before:h-0.5 before:absolute before:top-full before:left-0 before:bg-primary  before:z-10 "
+                      className="text-primary  cursor-pointer w-fit text-sm capitalize relative custom-underline "
                     >
                       shop now
                     </Link>
@@ -207,7 +256,7 @@ const Navbar = () => {
                     {item.subMenus.map((item, index) => (
                       <li
                         key={index}
-                        className="text-primary leading-normal cursor-pointer w-fit h-auto text-xs md:text-sm capitalize relative before:w-0 before:duration-300 hover:before:w-full before:h-0.5 before:absolute before:top-full before:left-0 before:bg-primary  before:z-10 "
+                        className="text-primary leading-normal cursor-pointer w-fit h-auto text-xs md:text-sm capitalize relative custom-underline "
                       >
                         {item}
                       </li>
@@ -233,7 +282,7 @@ const Navbar = () => {
                     {item.subMenus.map((item, index) => (
                       <li
                         key={index}
-                        className="text-primary leading-normal cursor-pointer w-fit h-auto text-xs md:text-sm capitalize relative before:w-0 before:duration-300 hover:before:w-full before:h-0.5 before:absolute before:top-full before:left-0 before:bg-primary  before:z-10 "
+                        className="text-primary leading-normal cursor-pointer w-fit h-auto text-xs md:text-sm capitalize relative custom-underline "
                       >
                         {item}
                       </li>
@@ -244,7 +293,7 @@ const Navbar = () => {
             </NavLinks>
           </ul>
         </div>
-        <div className="btns flex gap-3 md:gap-5 xl:gap-x-7.5 text-xl sm:text-base  lg:text-xl">
+        <div className="btns flex gap-3 md:gap-5 xl:gap-x-7.5 text-xl sm:text-base lg:text-xl">
           <div className="hover:cursor-pointer hidden sm:block">
             <CiSearch />
           </div>
@@ -262,6 +311,42 @@ const Navbar = () => {
           </div>
         </div>
       </Container>
+      <div className="mobile sm:hidden absolute top-16 h-[calc(100vh-4rem)] w-full px-2 z-999">
+       <CustomBtn label="search products..." />
+        <Accordion
+          type="single"
+          collapsible
+          defaultValue="home"
+          className="max-w-lg gap-0"
+        >
+          {mobileMenus.map((menu) => (
+            <AccordionItem
+              key={menu.title}
+              value={menu.title}
+              className={"border-b-0!"}
+            >
+              <AccordionTrigger className="capitalize focus:custom-underline text-primary text-xl font-medium ">
+                {menu.title}
+              </AccordionTrigger>
+
+              {menu.subMenus && (
+                <AccordionContent>
+                  <ul className="flex flex-col  border-b border-secondary/50 pb-3">
+                    {menu.subMenus.map((subMenu, index) => (
+                      <li
+                        key={index}
+                        className="text-primary cursor-pointer w-full capitalize custom-underline"
+                      >
+                        {subMenu}
+                      </li>
+                    ))}
+                  </ul>
+                </AccordionContent>
+              )}
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </div>
     </nav>
   );
 };
