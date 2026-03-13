@@ -8,33 +8,33 @@ const page = () => {
       {/* Container */}
       <div className="max-w-352.5 mx-auto">
         {/* Header */}
-        <h3 className='text-[35px] text-[#222222] font-bold leading-12.5'>CART</h3>
+        <h3 className='text-[35px] text-primary font-bold leading-12.5'>CART</h3>
         {/* Top Slider */}
         <div className="flex items-center py-12.5">
-          <div className="border-b-2 border-[#222222] pb-3 w-117.5">
-            <div className="flex items-start gap-x-2.5 text-lg text-[#222222] font-medium leading-6.5">
+          <div className="border-b-2 border-primary pb-3 lg:w-117.5 w-1/3">
+            <div className="flex items-start gap-x-2.5 lg:text-lg text-sm text-primary font-medium leading-6.5">
               <h5>01</h5>
               <div className="">
                 <h5>SHOPPING BAG</h5>
-                <p className='text-sm leading-7.5 text-[#767676] font-normal'>Manage Your Items List</p>
+                <p className='lg:text-sm text-xs leading-7.5 text-secondary font-normal'>Manage Your Items List</p>
               </div>
             </div>
           </div>
-          <div className="border-b-2 border-[#E4E4E4] pb-3 w-117.5">
-            <div className="flex flex-row items-start gap-x-2.5 text-lg text-[#767676] font-medium leading-6.5">
+          <div className="border-b-2 border-[#E4E4E4] pb-3 lg:w-117.5 w-1/3">
+            <div className="flex items-start gap-x-2.5 lg:text-lg text-[10px] text-secondary font-medium lg:leading-6.5">
               <h5>02</h5>
               <div className="">
                 <h5>SHIPPING AND CHECKOUT</h5>
-                <p className='text-sm leading-7.5 text-[#767676] font-normal'>Checkout Your Items List</p>
+                <p className='lg:text-sm text-[8px] leading-7.5 text-secondary font-normal'>Checkout Your Items List</p>
               </div>
             </div>
           </div>
-          <div className="border-b-2 border-[#E4E4E4] pb-3 w-117.5">
-            <div className="flex items-start gap-x-2.5 text-lg text-[#767676] font-medium leading-6.5">
+          <div className="border-b-2 border-[#E4E4E4] pb-3 lg:w-117.5 w-1/3">
+            <div className="flex items-start gap-x-2.5 lg:text-lg text-sm text-secondary font-medium leading-6.5">
               <h5>03</h5>
               <div className="">
                 <h5>CONFIRMATION</h5>
-                <p className='text-sm leading-7.5 text-[#767676] font-normal'>Review And Submit Your Order</p>
+                <p className='lg:text-sm text-xs leading-7.5 text-secondary font-normal'>Review And Submit Your Order</p>
               </div>
             </div>
           </div>
@@ -43,7 +43,7 @@ const page = () => {
         <div className="flex lg:flex-row flex-col justify-between items-start">
           {/* Left Side */}
           <div className="">
-            <div className="flex items-center pb-2.5 border-b-2 border-[#E4E4E4] text-[#222222] text-sm font-medium leading-6">
+            <div className="flex items-center pb-2.5 border-b-2 border-[#E4E4E4] text-primary text-sm font-medium leading-6">
               <h6 className='pr-106.75'>PRODUCT</h6>
               <h6 className='pr-22.75'>PRICE</h6>
               <h6 className='pr-24.75'>QUANTITY</h6>
@@ -139,7 +139,7 @@ const page = () => {
           </div>
         </div>
       </div>
-    </ >
+    </section >
   )
 }
 
