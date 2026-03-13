@@ -163,7 +163,7 @@ const Navbar = () => {
   const currencies = ["USD", "EUR", "BDT"];
 
   return (
-    <nav className="overflow-x-clip">
+    <nav className="overflow-x-clip sticky top-0 z-50 bg-white">
       <Container
         className={`h-14 sm:h-auto md:py-5 2xl:py-7.5 flex items-center justify-between`}
       >
@@ -277,7 +277,7 @@ const Navbar = () => {
             </NavLinks>
           </ul>
         </div>
-        <div className="btns flex gap-3 md:gap-5 xl:gap-x-7.5 text-xl sm:text-base lg:text-xl">
+        <div className="btns flex gap-3 md:gap-5 xl:gap-x-7.5 text-2xl">
           <div className="hover:cursor-pointer hidden sm:block">
             <CiSearch />
           </div>
@@ -287,8 +287,11 @@ const Navbar = () => {
           <div className="hover:cursor-pointer hidden sm:block">
             <CiHeart />
           </div>
-          <div className="hover:cursor-pointer">
+          <div className="hover:cursor-pointer relative">
             <IoBagOutline />
+            <span className="absolute top-full left-full -translate-x-4/5 -translate-y-1/2 sm:-translate-1/2  w-4 aspect-square text-[10px] sm:text-xs flex items-center justify-center rounded-full bg-accent text-white">
+              0
+            </span>
           </div>
           <div className="hover:cursor-pointer hidden sm:block">
             <HiOutlineBars3CenterLeft />
