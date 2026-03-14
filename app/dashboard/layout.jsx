@@ -8,7 +8,7 @@ const navItems = [
   { label: 'ORDERS', id: 'orders' },
   { label: 'DOWNLOADS', id: 'downloads' },
   { label: 'ADDRESSES', id: 'addresses' },
-  { label: 'ACCOUNT DETAILS', id: 'account-details' },
+  { label: 'ACCOUNT DETAILS', id: 'accountDetails' },
   { label: 'WISHLIST', id: 'wishlist' },
   { label: 'LOGOUT', id: 'logout' },
 ];
