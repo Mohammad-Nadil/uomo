@@ -43,7 +43,7 @@ const Footer = () => {
   const currencies = ["USD", "EUR", "BDT"];
   return (
     <footer className="bg-[#e4e4e4]">
-      <Container className={"grid grid-cols-1 md:grid-cols-4 gap-16 xl:gap-20 py-20 lg:py-25"}>
+      <Container className={"grid grid-cols-1 lg:grid-cols-4 gap-16 xl:gap-20 py-20 lg:py-25"}>
         <div className=" col-span-1 flex flex-col gap-y-11">
           <div className="logo">
             <Image src={logo} alt="logo" />
@@ -56,7 +56,7 @@ const Footer = () => {
             <p className="mail">sale@uomo.com</p>
             <p className="number">+1 246-345-0695</p>
           </div>
-          <div className="social flex items-center gap-x-10 md:justify-between xl:gap-11">
+          <div className="social flex items-center gap-x-10 lg:justify-between xl:gap-11">
             {[FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaPinterest].map(
               (Icon, index) => (
                 <Icon
@@ -67,7 +67,7 @@ const Footer = () => {
             )}
           </div>
         </div>
-        <div className=" col-span-1 md:col-span-2 flex flex-wrap sm:justify-around md:justify-between gap-20 sm:gap-10">
+        <div className=" col-span-1 lg:col-span-2 flex flex-wrap sm:justify-around lg:justify-between gap-20 sm:gap-10">
           {item.map((item, index) => (
             <div key={index} className="text-primary flex flex-col  gap-y-7">
               <p className="text-lg font-medium uppercase ">{item.title}</p>

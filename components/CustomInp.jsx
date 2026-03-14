@@ -37,6 +37,7 @@ const CustomInp = ({
           peer-focus:top-0
           peer-focus:bg-white
           peer-focus:px-2
+          peer-focus:text-primary
           capitalize`}
       >
         {label}
