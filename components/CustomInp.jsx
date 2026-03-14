@@ -22,7 +22,7 @@ const CustomInp = ({
         placeholder={placeholder || " "}
         required={required}
         className={`peer w-full rounded-sm border-2 border-gray-300 bg-transparent px-4 py-3 text-base outline-none
-          focus:border-primary transition-all duration-300`}
+          focus:border-primary transition-all duration-300 ${className}`}
       />
 
       <label

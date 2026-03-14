@@ -178,7 +178,7 @@ const page = () => {
                     <p className="text-sm text-right text-primary pt-2">
                       Shipping to AL.
                     </p>
-                    <button className="block ml-auto text-sm font-medium border-b-2 border-black">
+                    <button className="block ml-auto text-sm font-medium cursor-pointer custom-underline">
                       CHANGE ADDRESS
                     </button>
                   </div>
