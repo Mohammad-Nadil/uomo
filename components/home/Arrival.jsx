@@ -1,14 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
 import img1 from '@/public/images/img1.png'
+import Header from '../Header'
 
 const Arrival = () => {
   return (
     <>
         <section class="max-w-7xl mx-auto px-6">
-         <h1 class="text-2xl md:text-4xl text-center font-semibold mt-20 mb-10">
-         NEW ARRIVALS
-         </h1>
+         <Header text="NEW ARRIVAL"/>
          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-center">
          <div>
          <Image src={img1} class="mx-auto"/>
