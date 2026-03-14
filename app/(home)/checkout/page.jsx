@@ -10,35 +10,42 @@ const page = () => {
           SHIPPING AND CHECKOUT
         </h3>
         {/* Top Slider */}
-        <div className="flex items-start py-12.5">
-          <div className="border-b-2 border-primary pb-3 lg:w-117.5 w-1/3">
-            <div className="flex items-start gap-x-2.5 lg:text-lg text-xs text-primary font-medium lg:leading-6.5">
+        <div className="flex lg:flex-row flex-col items-start py-12.5 ">
+          <div className="border-b-2 border-primary pb-3 lg:w-117.5 w-fit mx-auto">
+            <div className="flex items-start gap-x-2.5 text-lg text-primary font-medium lg:leading-6.5">
               <h5>01</h5>
               <div className="">
                 <h5>SHOPPING BAG</h5>
-                <p className='lg:text-sm text-[10px] lg:leading-7.5 text-secondary font-normal'>Manage Your Items List</p>
+                <p className="text-sm lg:leading-7.5 text-secondary font-normal">
+                  Manage Your Items List
+                </p>
               </div>
             </div>
           </div>
-          <div className="border-b-2 border-primary pb-3 lg:w-117.5 w-1/3">
-            <div className="flex items-start gap-x-2.5 lg:text-lg text-xs text-primary font-medium lg:leading-6.5">
+          <div className="border-b-2 border-primary pb-3 lg:w-117.5 w-fit my-3 lg:mt-0 mx-auto">
+            <div className="flex items-start gap-x-2.5 text-lg text-primary font-medium lg:leading-6.5">
               <h5>02</h5>
               <div className="">
                 <h5>SHIPPING AND CHECKOUT</h5>
-                <p className='lg:text-sm text-[10px] lg:leading-7.5 text-secondary font-normal'>Checkout Your Items List</p>
+                <p className="text-sm lg:leading-7.5 text-secondary font-normal">
+                  Checkout Your Items List
+                </p>
               </div>
             </div>
           </div>
-          <div className="border-b-2 border-[#E4E4E4] pb-3 lg:w-117.5 w-1/3">
-            <div className="flex items-start gap-x-2.5 lg:text-lg text-xs text-secondary font-medium lg:leading-6.5">
+          <div className="border-b-2 border-[#E4E4E4] pb-3 lg:w-117.5 w-fit mx-auto">
+            <div className="flex items-start gap-x-2.5 text-lg text-secondary font-medium lg:leading-6.5">
               <h5>03</h5>
               <div className="">
                 <h5>CONFIRMATION</h5>
-                <p className='lg:text-sm text-[10px] lg:leading-7.5 text-secondary font-normal'>Review And Submit Your Order</p>
+                <p className="text-sm lg:leading-7.5 text-secondary font-normal">
+                  Review And Submit Your Order
+                </p>
               </div>
             </div>
           </div>
         </div>
+
         {/* Content */}
         <div className="lg:flex-row flex-col flex items-start justify-between">
           {/* Left */}
@@ -167,9 +174,7 @@ const page = () => {
                 <p className="text-sm text-primary font-medium leading-6">
                   SHIPPING
                 </p>
-                <p className="text-sm text-primary leading-6">
-                  Free shipping
-                </p>
+                <p className="text-sm text-primary leading-6">Free shipping</p>
               </div>
               <div className="flex items-center justify-between border-b border-[#E4E4E4] py-4">
                 <p className="text-sm text-primary font-medium leading-6">
