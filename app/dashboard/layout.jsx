@@ -8,7 +8,7 @@ const navItems = [
   { label: 'ORDERS', id: 'orders' },
   { label: 'DOWNLOADS', id: 'downloads' },
   { label: 'ADDRESSES', id: 'addresses' },
-  { label: 'ACCOUNT DETAILS', id: 'account-details' },
+  { label: 'ACCOUNT DETAILS', id: 'accountDetails' },
   { label: 'WISHLIST', id: 'wishlist' },
   { label: 'LOGOUT', id: 'logout' },
 ];
@@ -22,14 +22,13 @@ export default function layout({ children }) {
           My Account
         </h1>
         <div className="flex gap-16">
-          {' '}
           <nav className="w-1/5 shrink-0">
             <ul className="space-y-4">
               {navItems.map(item => (
                 <li key={item.id}>
                   <Link
                     onClick={() => setActive(item.id)}
-                    href={`dashboard/${item.id}`}
+                    href={`/dashboard/${item.id === "dashboard"? "":item.id}`}
                     className={`text-xs font-semibold tracking-widest uppercase transition-colors duration-150 text-left
                       ${
                         active === item.id

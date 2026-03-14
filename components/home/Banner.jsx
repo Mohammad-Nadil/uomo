@@ -1,25 +1,27 @@
 import React from "react";
-import Container from "../Container";
-import Link from "next/link";
 import Image from "next/image";
-import { BsDashLg } from "react-icons/bs";
+import Banner1 from "@/public/images/about-bannar.png";
 
 const Banner = () => {
   return (
-    <div>
-      <Image src="" alt="" />
-      <Container className={"py-66 flex items-center justify-start"}>
-        <div className="inner max-w-196 text-white ">
-          <div className="category flex items-center ">
-            <BsDashLg /> <p> Glasses</p>
-          </div>
-          <div className="title">UP TO $60 OFF POLARISED SUNGLASSES</div>
-          <div className="btn">
-            <Link href={"/"}></Link>
-          </div>
-        </div>
-      </Container>
-    </div>
+    <>
+      <section class="relative">
+         <Image src={Banner1} alt="Banner" class="w-full h-[400px] md:h-[600px] object-cover"/>
+         <div class="absolute inset-0 flex flex-col justify-center items-start px-6 md:px-20">
+         <h3 class="text-white text-xs md:text-sm font-semibold mb-4">
+         <span class="w-10 h-1 bg-white inline-block mr-2"></span>
+         EYEWEAR
+         </h3>
+         <h1 class="text-white text-2xl md:text-5xl font-bold mb-6 leading-tight">
+         UP TO $60 OFF POLARISED <br class="hidden md:block"/>
+         SUNGLASSES
+         </h1>
+         <button class="px-6 py-3 bg-white text-black font-semibold hover:bg-black hover:text-white transition">
+         SHOP NOW
+         </button>
+         </div>
+         </section>
+    </>
   );
 };
 
