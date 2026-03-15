@@ -89,16 +89,16 @@ const page = () => {
                       <Image
                         src={"/images/shop.png"}
                         alt="vvv"
-                        width={80}
-                        height={80}
-                        className="w-full h-auto object-contain"
+                        width={712}
+                        height={700}
+                        className="object-contain"
                       />
                       <Image
-                        src={"/images/shop.png"}
+                        src={"/images/hoverZoom.png"}
                         alt="vvv"
-                        width={80}
-                        height={80}
-                        className="absolute bottom-4 right-4 lg:bottom-7.5 lg:right-7.5 h-6 w-6 cursor-pointer"
+                        width={70}
+                        height={70}
+                        className="absolute bottom-4 right-4 lg:bottom-2 lg:right-7.5 cursor-pointer"
                       />
                     </SwiperSlide>
                   ))}
@@ -130,7 +130,7 @@ const page = () => {
                 </div>
               </div>
 
-              <h3 className="text-xl xl:head_26_regular font-normal text-primary">
+              <h3 className="text-xl xl:text-[26px] font-normal text-primary">
                 Lightweight Puffer Jacket With a Hood
               </h3>
               <h4 className="text-[22px] font-medium text-primary mt-2">
@@ -147,7 +147,7 @@ const page = () => {
               {/* Buttons Container */}
               <div className="flex items-center gap-x-2.5 lg:gap-x-5 my-6 lg:my-8">
                 {/* Quantity Selector */}
-                <div className="w-25 lg:w-31.25 h-12 lg:h-15 border border-[#e4e4e4] flex items-center justify-between px-3 lg:px-5 shrink-0">
+                <div className="w-25 lg:w-31.25 h-12 lg:h-15 border-2 border-[#E4E4E4] flex items-center justify-between px-3 lg:px-5 shrink-0">
                   <button
                     onClick={handleMinus}
                     className="cursor-pointer text-xl text-secondary hover:text-black transition-colors"
@@ -169,7 +169,7 @@ const page = () => {
 
               {/* Wishlist & Share */}
               <div className="flex gap-x-8 lg:pb-8">
-                <button className="text-primary text-[13px] font-medium flex items-center gap-x-2 uppercase relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-[80%] after:border-b-2 after:border-head">
+                <button className="text-primary text-[13px] font-medium flex items-center gap-x-2 uppercase relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-[80%] after:border-b-2 after:border-primary">
                   <FaRegHeart /> Add to wishlist
                 </button>
 
@@ -199,7 +199,6 @@ const page = () => {
             </div>
           </div>
         </div>
-
         {/* vvvvvvvvvvvvvvv */}
         <div className="w-full">
           <div className="flex flex-col sm:flex-row justify-center items-center sm:gap-x-10 xl:gap-x-19 gap-y-6 sm:gap-y-0 text-base font-medium text-secondary">
@@ -248,7 +247,7 @@ const page = () => {
                     <h5 className="text-base font-medium text-primary">
                       Sed do eiusmod tempor incididunt ut labore
                     </h5>
-                    <p className="text-sm font-medium text-primary w-full xl:w-232.5 leading-7.5 pt-6 lg:pt-11.25 text-justify lg:text-left">
+                    <p className="text-sm text-primary w-full xl:w-232.5 leading-7.5 pt-6 lg:pt-11.25 text-justify lg:text-left">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                       sed do eiusmod tempor incididunt ut labore et dolore magna
                       aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -361,7 +360,7 @@ const page = () => {
               {activeTab === "reviews" && (
                 <div className="animate-fadeIn space-y-8">
                   {/* Review 1 */}
-                  <div className="border-b border-footer pb-5.75">
+                  <div className="border-b-2 border-[#E4E4E4] pb-5.75">
                     <h4 className="text-base font-medium text-primary">
                       Reviews
                     </h4>
@@ -434,84 +433,84 @@ const page = () => {
               )}
             </div>
           </div>
-        </div>
-        {/* vvvvvvvvvvvvvvv */}
-        <div className=" mt-7 lg:mt-13.5">
-          <div className="">
-            <h3 className="text-lg font-medium text-primary">
-              Be the first to review “Message Cotton T-Shirt”
-            </h3>
-            <h4 className="text-sm text-primary py-3 lg:pb-7.5">
-              Your email address will not be published. Required fields are
-              marked *
-            </h4>
+          {/* vvvvvvvvvvvvvvv */}
+          <div className="mt-7 lg:mt-13.5">
+            <div className="px-60">
+              <h3 className="text-lg font-medium text-primary">
+                Be the first to review “Message Cotton T-Shirt”
+              </h3>
+              <h4 className="text-sm text-primary py-3 lg:pb-7.5">
+                Your email address will not be published. Required fields are
+                marked *
+              </h4>
 
-            <div className="flex flex-col lg:flex-row lg:items-center gap-x-2 lg:mb-6.5">
-              <span className="text-sm text-primary">Your rating *</span>
-              <div className="flex  text-yellow-400">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i}>★</span>
-                ))}
+              <div className="flex flex-col lg:flex-row lg:items-center gap-x-2 lg:mb-6.5">
+                <span className="text-sm text-primary">Your rating *</span>
+                <div className="flex  text-yellow-400">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i}>★</span>
+                  ))}
+                </div>
               </div>
+
+              <form className="space-y-3 lg:space-y-7.5">
+                {/* Review Textarea */}
+                <div>
+                  <textarea
+                    placeholder="Your Review"
+                    className="w-full border-2 border-[#E4E4E4] p-4.25 h-53.25 outline-none focus:border-primary text-sm text-secondary"
+                  />
+                </div>
+
+                {/* Floating Label Name Input */}
+                <div className="relative">
+                  <label className="absolute -top-3 left-3 bg-white px-1 text-sm text-primary">
+                    Name *
+                  </label>
+                  <input
+                    type="text"
+                    defaultValue="Ali"
+                    className="w-full border border-primary p-4.25 outline-none"
+                  />
+                </div>
+
+                {/* Email Input */}
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Email address *"
+                    className="w-full border-2 border-[#E4E4E4] text-sm text-secondary p-4.25 outline-none focus:border-primary"
+                  />
+                </div>
+
+                {/* Checkbox */}
+                <div className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="save-info"
+                    className="mt-1 w-4 h-4"
+                  />
+                  <label className="text-sm text-secondary">
+                    Save my name, email, and website in this browser for the
+                    next time I comment.
+                  </label>
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  className="bg-primary text-white px-10 lg:px-0 text-sm font-medium h-12 lg:w-70 lg:h-15 cursor-pointer"
+                >
+                  SUBMIT
+                </button>
+              </form>
             </div>
-
-            <form className="space-y-3 lg:space-y-7.5">
-              {/* Review Textarea */}
-              <div>
-                <textarea
-                  placeholder="Your Review"
-                  className="w-full border border-footer p-4.25 h-53.25 outline-none focus:border-head text-sm text-secondary"
-                />
-              </div>
-
-              {/* Floating Label Name Input */}
-              <div className="relative">
-                <label className="absolute -top-3 left-3 bg-white px-1 text-sm text-primary">
-                  Name *
-                </label>
-                <input
-                  type="text"
-                  defaultValue="Ali"
-                  className="w-full border border-head p-4.25 outline-none"
-                />
-              </div>
-
-              {/* Email Input */}
-              <div>
-                <input
-                  type="email"
-                  placeholder="Email address *"
-                  className="w-full border border-footer text-sm text-secondary p-4.25 outline-none focus:border-head"
-                />
-              </div>
-
-              {/* Checkbox */}
-              <div className="flex items-start gap-3">
-                <input
-                  type="checkbox"
-                  id="save-info"
-                  className="mt-1 w-4 h-4"
-                />
-                <label className="text-sm text-secondary">
-                  Save my name, email, and website in this browser for the next
-                  time I comment.
-                </label>
-              </div>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="bg-primary text-white px-10 lg:px-0 text-sm font-medium h-12 lg:w-70 lg:h-15 cursor-pointer"
-              >
-                SUBMIT
-              </button>
-            </form>
           </div>
         </div>
         {/* vvvvvvvvvvvvvvv */}
-        <div className="mt-9.5 mb-25 hidden lg:block">
-          <h3 className="head_26_regular text-primary">
-            RELATED <span className="head_26_bold ">PRODUCTS</span>
+        <div className="mt-9.5 mb-25 hidden lg:block px-10">
+          <h3 className="text-[26px] text-primary">
+            RELATED <span className="font-bold">PRODUCTS</span>
           </h3>
           <div className="mt-8.5 flex gap-x-7.5">
             <Product

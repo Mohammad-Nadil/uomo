@@ -7,8 +7,8 @@ const Product = ({ catagory, itemName, itemPrice, discountPrice }) => {
   const [isLiked, setIsLiked] = useState(false);
   return (
     <>
-      <div className="w-82.5 relative group">
-        <div className="relative overflow-hidden ">
+      <div className="w-75 relative group">
+        <div className="relative overflow-hidden">
           <Image
             src={"/images/product.png"}
             alt="vv"
@@ -20,8 +20,8 @@ const Product = ({ catagory, itemName, itemPrice, discountPrice }) => {
           {/* Badge End */}
 
           {/* Add To Cart Start */}
-          <div className="w-77.5 bg-white pt-4 pb-2.5 text-center mx-auto absolute bottom-[20%] left-1/2 -translate-x-1/2 translate-y-[50%] opacity-0 group-hover:opacity-100 group-hover:translate-y-0 ease-in-out duration-500">
-            <h2 className="texts_14_medium text-primary">ADD TO CART</h2>
+          <div className="w-70 bg-white pt-4 pb-2.5 text-center mx-auto absolute bottom-[10%] left-1/2 -translate-x-1/2 translate-y-[50%] opacity-0 group-hover:opacity-100 group-hover:translate-y-0 ease-in-out duration-500">
+            <h2 className="text-sm font-medium text-primary">ADD TO CART</h2>
           </div>
           {/* Add To Cart End*/}
         </div>
@@ -51,7 +51,9 @@ const Product = ({ catagory, itemName, itemPrice, discountPrice }) => {
                 <p className="text-base text-second line-through">
                   ${itemPrice}
                 </p>
-                <p className="text-base font-medium text-red ">${discountPrice}</p>
+                <p className="text-base font-medium text-red ">
+                  ${discountPrice}
+                </p>
               </>
             ) : (
               <p className="text-base text-primary">${itemPrice}</p>
