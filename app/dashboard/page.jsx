@@ -5,8 +5,6 @@ const page = () => {
   return (
     <div>
       <div className="">
-      
-
         <div className="">
           <div className="flex-1 pt-0.5">
             <p className="text-sm text-gray-700 leading-relaxed">

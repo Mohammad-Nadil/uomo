@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-// React Leaflet 
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -88,7 +87,7 @@ const StoreLocatorPage = () => {
               {STORES.map((store) => (
                 <div key={store.id} className="border-b border-[#E4E4E4] pb-10 last:border-0">
                   <h4 className="font-medium text-[18px] mb-3">{store.name}</h4>
-                  <div className="text-[#222222] text-sm space-y-1 leading-6 mb-5">
+                  <div className="text-primary text-sm space-y-1 leading-6 mb-5">
                     <p>{store.address}</p>
                     <p>{store.city}</p>
                     <p>{store.phone}</p>
@@ -130,7 +129,7 @@ const StoreLocatorPage = () => {
                 </Marker>
               ))}
 
-              {/* map logic */}
+              {/* map  */}
               <ChangeView center={activeCenter} />
             </MapContainer>
           </div>
