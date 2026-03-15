@@ -1,3 +1,4 @@
+import CustomInp from "@/components/CustomInp";
 import React from "react";
 
 const page = () => {

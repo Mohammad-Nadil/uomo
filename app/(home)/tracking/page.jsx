@@ -1,3 +1,4 @@
+import CustomInp from "@/components/CustomInp";
 import React from "react";
 
 const page = () => {
@@ -20,18 +21,20 @@ const page = () => {
         <form action="/api/track" method="POST" className="space-y-5">
           {/* Order ID Input */}
           <div className="w-full">
-            <input
+            <CustomInp label="Order ID" type="text" />
+            {/* <input
               type="text"
               name="orderId"
-              placeholder="Order ID"
+              placeholder=""
               required
               className="w-full border-2 border-[#E4E4E4] p-4 text-sm focus:outline-none focus:border-black placeholder:text-secondary"
-            />
+            /> */}
           </div>
 
           {/* Billing Email Input with Border Label */}
           <div className="relative mt-7.5 mb-0">
-            <label
+            <CustomInp label="Billing email" type="email" />
+            {/* <label
               htmlFor="email"
               className="absolute -top-3 left-4 bg-white pl-1 pr-3 text-sm leading-6 text-primary"
             >
@@ -44,7 +47,7 @@ const page = () => {
               placeholder="Email address"
               required
               className="w-full border-2 border-primary p-4 text-sm focus:outline-none"
-            />
+            /> */}
           </div>
 
           {/* Track Button */}
