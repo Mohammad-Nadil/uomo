@@ -117,23 +117,27 @@ const page = () => {
             {/* Right Side: Product Details */}
             <div className="text-start px-4 md:px-20 lg:px-0">
               <div className="hidden xl:flex justify-between items-center mb-10">
-                <h4 className="texts_14_medium text-head">HOME / THE SHOP</h4>
+                <h4 className="text-sm font-medium text-primary">
+                  HOME / THE SHOP
+                </h4>
                 <div className="flex gap-x-6">
-                  <button className="flex items-center gap-x-1 texts_14_medium cursor-pointer text-head">
+                  <button className="flex items-center gap-x-1 text-sm font-medium cursor-pointer text-primary">
                     <GrFormPrevious /> PREV
                   </button>
-                  <button className="flex items-center gap-x-1 texts_14_medium cursor-pointer text-head">
+                  <button className="flex items-center gap-x-1 text-sm font-medium cursor-pointer text-primary">
                     NEXT <MdNavigateNext />
                   </button>
                 </div>
               </div>
 
-              <h3 className="text-xl xl:head_26_regular font-normal text-head">
+              <h3 className="text-xl xl:head_26_regular font-normal text-primary">
                 Lightweight Puffer Jacket With a Hood
               </h3>
-              <h4 className="text-[22px] font-medium text-head mt-2">$449</h4>
+              <h4 className="text-[22px] font-medium text-primary mt-2">
+                $449
+              </h4>
 
-              <p className="texts_14_regular text-head max-w-125 leading-6 pt-4 lg:pt-6.25">
+              <p className="texts_14_regular text-primary max-w-125 leading-6 pt-4 lg:pt-6.25">
                 Phasellus sed volutpat orci. Fusce eget lore mauris vehicula
                 elementum gravida nec dui. Aenean aliquam varius ipsum, non
                 ultricies tellus sodales eu. Donec dignissim viverra nunc, ut
@@ -150,7 +154,7 @@ const page = () => {
                   >
                     -
                   </button>
-                  <span className="text-head font-medium">{count}</span>
+                  <span className="text-primary font-medium">{count}</span>
                   <button
                     onClick={handlePlus}
                     className="cursor-pointer text-xl text-[#767676] hover:text-black transition-colors"
@@ -158,36 +162,36 @@ const page = () => {
                     +
                   </button>
                 </div>
-                <button className="h-12  lg:w-[280px] lg:h-[60px] bg-head text-white text-[12px] lg:texts_14_medium  tracking-widest cursor-pointer uppercase px-10 lg:px-0">
+                <button className="h-12  lg:w-[280px] lg:h-[60px] bg-primary text-white text-[12px] lg:text-sm lg:font-medium  cursor-pointer uppercase px-10 lg:px-0">
                   ADD TO CART
                 </button>
               </div>
 
               {/* Wishlist & Share */}
               <div className="flex gap-x-8 lg:pb-8">
-                <button className="text-head text-[13px] font-medium flex items-center gap-x-2 uppercase relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-[80%] after:border-b-2 after:border-head">
+                <button className="text-primary text-[13px] font-medium flex items-center gap-x-2 uppercase relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-[80%] after:border-b-2 after:border-head">
                   <FaRegHeart /> Add to wishlist
                 </button>
 
-                <button className="text-head text-[13px] font-medium flex items-center gap-x-2 uppercase ">
+                <button className="text-primary text-[13px] font-medium flex items-center gap-x-2 uppercase ">
                   <BsShare /> Share
                 </button>
               </div>
 
               {/* Meta Info */}
               <div className="space-y-1 mt-8">
-                <h5 className="texts_13_regular text-[#767676]">
-                  SKU: <span className="text-head">N/A</span>
+                <h5 className="text-sm text-secondary">
+                  SKU: <span className="text-primary">N/A</span>
                 </h5>
-                <h5 className="texts_13_regular text-[#767676]">
+                <h5 className="text-sm text-secondary">
                   Categories:{" "}
-                  <span className="text-head">
+                  <span className="text-primary">
                     Casual & Urban Wear, Jackets, Men
                   </span>
                 </h5>
-                <h5 className="texts_13_regular text-[#767676]">
+                <h5 className="text-sm text-secondary">
                   Tags:{" "}
-                  <span className="text-head">
+                  <span className="text-primary">
                     biker, black, bomber, leather
                   </span>
                 </h5>
@@ -198,14 +202,14 @@ const page = () => {
       </div>
       {/* vvvvvvvvvvvvvvv */}
       <div className="w-full">
-        <div className="flex flex-col sm:flex-row justify-center items-center sm:gap-x-10 xl:gap-x-19 gap-y-6 sm:gap-y-0 texts_16_medium text-[#767676]">
+        <div className="flex flex-col sm:flex-row justify-center items-center sm:gap-x-10 xl:gap-x-19 gap-y-6 sm:gap-y-0 texts_16_medium text-secondary">
           {/* DESCRIPTION Button */}
           <button
             onClick={() => setActiveTab("description")}
-            className={`relative hover:text-head after:content-[''] after:block after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:transition-all after:duration-300 ${
+            className={`relative hover:text-primary after:content-[''] after:block after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:transition-all after:duration-300 cursor-pointer ${
               activeTab === "description"
-                ? "text-head after:w-full after:bg-head"
-                : "after:w-0 hover:after:w-full after:bg-head"
+                ? "text-primary after:w-full after:bg-primary"
+                : "after:w-0 hover:after:w-full after:bg-primary"
             }`}
           >
             DESCRIPTION
@@ -214,10 +218,10 @@ const page = () => {
           {/* ADDITIONAL INFORMATION Button */}
           <button
             onClick={() => setActiveTab("additional")}
-            className={`relative hover:text-head after:content-[''] after:block after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:transition-all after:duration-300 ${
+            className={`relative hover:text-primary after:content-[''] after:block after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:transition-all after:duration-300 cursor-pointer ${
               activeTab === "additional"
-                ? "text-head after:w-full after:bg-head"
-                : "after:w-0 hover:after:w-full after:bg-head"
+                ? "text-primary after:w-full after:bg-primary"
+                : "after:w-0 hover:after:w-full after:bg-primary"
             }`}
           >
             ADDITIONAL INFORMATION
@@ -226,10 +230,10 @@ const page = () => {
           {/* REVIEWS Button */}
           <button
             onClick={() => setActiveTab("reviews")}
-            className={`relative hover:text-head after:content-[''] after:block after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:transition-all after:duration-300 ${
+            className={`relative hover:text-primary after:content-[''] after:block after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:transition-all after:duration-300 cursor-pointer ${
               activeTab === "reviews"
-                ? "text-head after:w-full after:bg-head"
-                : "after:w-0 hover:after:w-full after:bg-head"
+                ? "text-primary after:w-full after:bg-primary"
+                : "after:w-0 hover:after:w-full after:bg-primary"
             }`}
           >
             REVIEWS (3)
@@ -241,10 +245,10 @@ const page = () => {
             {activeTab === "description" && (
               <div className="animate-fadeIn">
                 <div className="">
-                  <h5 className="texts_16_medium text-head">
+                  <h5 className="text-base font-medium text-primary">
                     Sed do eiusmod tempor incididunt ut labore
                   </h5>
-                  <p className="texts_14_regular text-head w-full xl:w-232.5 leading-7.5 pt-6 lg:pt-11.25 text-justify lg:text-left">
+                  <p className="text-sm font-medium text-primary w-full xl:w-232.5 leading-7.5 pt-6 lg:pt-11.25 text-justify lg:text-left">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -261,56 +265,56 @@ const page = () => {
                 </div>
                 <div className="mt-9.75 flex flex-col md:flex-row gap-y-8 md:gap-x-20 xl:gap-x-37.5">
                   <div className="">
-                    <h4 className="texts_16_medium text-head">
+                    <h4 className="texts_16_medium text-primary">
                       Why choose product?
                     </h4>
                     <div className="mt-6 lg:mt-10.75 space-y-3 lg:space-y-0">
                       <div className="flex items-center gap-x-2.5">
                         <div className="h-1.5 w-1.5 bg-[#C4C4C4] rounded-full"></div>
-                        <p className="texts_14_regular text-head ">
+                        <p className="texts_14_regular text-primary ">
                           Creat by cotton fibric with soft and smooth
                         </p>
                       </div>
                       <div className=" flex items-center gap-x-2.5">
                         <div className="h-1.5 w-1.5 bg-[#C4C4C4] rounded-full"></div>
-                        <p className="texts_14_regular text-head ">
+                        <p className="texts_14_regular text-primary ">
                           Simple, Configurable (e.g. size, color, etc.), bundled
                         </p>
                       </div>
                       <div className="flex items-center gap-x-2.5">
                         <div className="h-1.5 w-1.5 bg-[#C4C4C4] rounded-full"></div>
-                        <p className="texts_14_regular text-head ">
+                        <p className="texts_14_regular text-primary ">
                           Downloadable/Digital Products, Virtual Products
                         </p>
                       </div>
                     </div>
                   </div>
                   <div className="">
-                    <h4 className="texts_16_medium text-head">
+                    <h4 className="texts_16_medium text-primary">
                       Sample Number List
                     </h4>
                     <div className="mt-6 lg:mt-10.75 space-y-3 lg:space-y-0">
                       <div className="flex items-start gap-x-2.5">
-                        <p className="texts_14_regular text-head ">
+                        <p className="texts_14_regular text-primary ">
                           1 Create Store-specific attrittbutes on the fly
                         </p>
                       </div>
                       <div className=" flex items-start gap-x-2.5">
-                        <p className="texts_14_regular text-head ">
+                        <p className="texts_14_regular text-primary ">
                           2 Simple, Configurable (e.g. size, color, etc.),
                           bundled
                         </p>
                       </div>
                       <div className="flex items-start gap-x-2.5">
-                        <p className="texts_14_regular text-head ">
+                        <p className="texts_14_regular text-primary ">
                           3 Downloadable/Digital Products, Virtual Products
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <h4 className="texts_16_medium text-head pt-9.25">Lining</h4>
-                <p className="texts_14_regular text-head pb-4 lg:pb-0">
+                <h4 className="texts_16_medium text-primary pt-9.25">Lining</h4>
+                <p className="texts_14_regular text-primary pb-4 lg:pb-0">
                   100% Polyester, Main: 100% Polyeste
                 </p>
               </div>
@@ -320,34 +324,34 @@ const page = () => {
             {activeTab === "additional" && (
               <div className="flex flex-row gap-x-10 md:gap-x-16 lg:gap-x-22.5 my-8 lg:my-12.5 animate-fadeIn">
                 <div className="w-[100px] lg:w-[82px] space-y-[20px] lg:space-y-[31px]">
-                  <h4 className="texts_16_medium text-head whitespace-nowrap">
+                  <h4 className="texts_16_medium text-primary whitespace-nowrap">
                     Weight
                   </h4>
-                  <h4 className="texts_16_medium text-head whitespace-nowrap">
+                  <h4 className="texts_16_medium text-primary whitespace-nowrap">
                     Dimensions
                   </h4>
-                  <h4 className="texts_16_medium text-head whitespace-nowrap">
+                  <h4 className="texts_16_medium text-primary whitespace-nowrap">
                     Size
                   </h4>
-                  <h4 className="texts_16_medium text-head whitespace-nowrap">
+                  <h4 className="texts_16_medium text-primary whitespace-nowrap">
                     Color
                   </h4>
-                  <h4 className="texts_16_medium text-head whitespace-nowrap">
+                  <h4 className="texts_16_medium text-primary whitespace-nowrap">
                     Storage
                   </h4>
                 </div>
                 <div className="space-y-[20px] lg:space-y-[31px]">
-                  <h5 className="texts_14_regular text-head">1.25 kg</h5>
-                  <h5 className="texts_14_regular text-head">
+                  <h5 className="texts_14_regular text-primary">1.25 kg</h5>
+                  <h5 className="texts_14_regular text-primary">
                     90 x 60 x 90 cm
                   </h5>
-                  <h5 className="texts_14_regular text-head">
+                  <h5 className="texts_14_regular text-primary">
                     XS, S, M, L, XL
                   </h5>
-                  <h5 className="texts_14_regular text-head">
+                  <h5 className="texts_14_regular text-primary">
                     Black, Orange, White
                   </h5>
-                  <h5 className="texts_14_regular text-head leading-relaxed">
+                  <h5 className="texts_14_regular text-primary leading-relaxed">
                     Relaxed fit shirt-style dress with a rugged
                   </h5>
                 </div>
@@ -359,14 +363,19 @@ const page = () => {
               <div className="animate-fadeIn space-y-8">
                 {/* Review 1 */}
                 <div className="border-b border-footer pb-5.75">
-                  <h4 className="texts_16_medium text-head">Reviews</h4>
+                  <h4 className="texts_16_medium text-primary">Reviews</h4>
                   <div className="flex gap-x-4 md:gap-x-7.5 items-start md:items-center mt-6.5">
                     <div className="flex-shrink-0 w-12 md:w-auto">
-                      <Image src={"/images/shop.png"} alt="vvv" />
+                      <Image
+                        src={"/images/review.png"}
+                        alt="vvv"
+                        width={60}
+                        height={60}
+                      />
                     </div>
                     <div className="w-full">
                       <div className="flex flex-col md:flex-row md:justify-between md:items-center w-full">
-                        <h5 className="texts_14_regular text-head">
+                        <h5 className="texts_14_regular text-primary">
                           Janice Miller
                         </h5>
                         <div className="flex text-yellow-400 mt-1 md:mt-0">
@@ -391,11 +400,16 @@ const page = () => {
                 <div className="my-7.5">
                   <div className="flex gap-x-4 md:gap-x-7.5 items-start md:items-center">
                     <div className="flex-shrink-0 w-12 md:w-auto">
-                      <Image imgSrc={"/images/shop.png"} alt="vvv" />
+                      <Image
+                        src={"/images/review.png"}
+                        alt="vvv"
+                        width={60}
+                        height={60}
+                      />
                     </div>
                     <div className="w-full">
                       <div className="flex flex-col md:flex-row md:justify-between md:items-center w-full">
-                        <h5 className="texts_14_regular text-head">
+                        <h5 className="texts_14_regular text-primary">
                           Benjam Porter
                         </h5>
                         <div className="flex text-yellow-400 mt-1 md:mt-0">
@@ -424,16 +438,16 @@ const page = () => {
       <div className=" mt-7 lg:mt-[54px]">
         <div className="max-w-[1410px] mx-auto">
           <div className="">
-            <h3 className="texts_18_medium text-head">
+            <h3 className="texts_18_medium text-primary">
               Be the first to review “Message Cotton T-Shirt”
             </h3>
-            <h4 className="texts_14_regular text-head py-3 lg:pb-7.5">
+            <h4 className="texts_14_regular text-primary py-3 lg:pb-7.5">
               Your email address will not be published. Required fields are
               marked *
             </h4>
 
             <div className="flex flex-col lg:flex-row lg:items-center gap-x-2 lg:mb-[26px]">
-              <span className="texts_14_regular text-head">Your rating *</span>
+              <span className="texts_14_regular text-primary">Your rating *</span>
               <div className="flex  text-yellow-400">
                 {[...Array(5)].map((_, i) => (
                   <span key={i}>★</span>
@@ -452,7 +466,7 @@ const page = () => {
 
               {/* Floating Label Name Input */}
               <div className="relative">
-                <label className="absolute -top-3 left-3 bg-white px-1 texts_14_regular text-head">
+                <label className="absolute -top-3 left-3 bg-white px-1 texts_14_regular text-primary">
                   Name *
                 </label>
                 <input
@@ -487,7 +501,7 @@ const page = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="bg-head text-white px-10 lg:px-0 texts_14_medium h-12 lg:w-[280px] lg:h-[60px] cursor-pointer"
+                className="bg-[#222222] text-white px-10 lg:px-0 texts_14_medium h-12 lg:w-[280px] lg:h-[60px] cursor-pointer"
               >
                 SUBMIT
               </button>
@@ -498,7 +512,7 @@ const page = () => {
       {/* vvvvvvvvvvvvvvv */}
       <div className="mt-9.5 mb-25 hidden lg:block">
         <div className="max-w-[1410px] mx-auto">
-          <h3 className="head_26_regular text-head">
+          <h3 className="head_26_regular text-primary">
             RELATED <span className="head_26_bold ">PRODUCTS</span>
           </h3>
           <div className="mt-8.5 flex gap-x-7.5">
