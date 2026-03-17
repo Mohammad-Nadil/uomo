@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Tab from "@/components/Tab";
+import useLockStore from "./store/lock";
+import Overlay from "@/components/Overlay";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -18,11 +20,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${jost.variable} antialiased`}>
+      <body className={`${jost.variable} antialiased `}>
         <Navbar />
         {children}
         <Tab />
         <Footer />
+        <Overlay />
       </body>
     </html>
   );

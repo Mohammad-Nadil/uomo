@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { use, useEffect, useRef, useState } from "react";
 import Container from "./Container";
 import logo from "@/public/images/logo.png";
 import Link from "next/link";
@@ -23,6 +23,7 @@ import {
 } from "react-icons/fa";
 import { Search, User } from "lucide-react";
 import CustomInput from "./CustomInp";
+import useLockStore from "@/app/store/lock";
 
 export const NavLinks = ({ title, link, className, children }) => {
   return (
@@ -38,6 +39,8 @@ export const NavLinks = ({ title, link, className, children }) => {
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const searchRef = useRef(null);
+  const lockView = useLockStore((state) => state.lockView);
 
   const mobileMenus = [
     {
@@ -163,6 +166,34 @@ const Navbar = () => {
   ];
   const currencies = ["USD", "EUR", "BDT"];
 
+  const quickLinks = [
+    "about",
+    "contact us",
+    "store location",
+    "faq",
+    "coming soon",
+    "404 page",
+  ];
+
+  const handleSearchOpen = () => {
+    setShowSearch(true);
+    lockView();
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (searchRef.current && !searchRef.current.contains(e.target)) {
+        setShowSearch(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <nav className="overflow-x-clip sticky top-0 z-999 bg-white">
       <Container
@@ -282,11 +313,17 @@ const Navbar = () => {
         </div>
         <div className="btns flex gap-3 md:gap-5 xl:gap-x-7.5 text-2xl">
           <div className="hover:cursor-pointer hidden sm:block">
-            <div onClick={() => setShowSearch(!showSearch)} className="">
-              <CiSearch />
+            <div onClick={handleSearchOpen} className="">
+              <div>
+                <CiSearch />
+              </div>
+              <div></div>
             </div>
-            <div className={``}>
-              <Container>
+            <div
+              ref={searchRef}
+              className={`absolute w-full py-16 top-full left-1/2 -translate-x-1/2 bg-white z-50 ${showSearch ? "block" : "hidden"}`}
+            >
+              <Container className={`flex flex-col gap-y-5`}>
                 <p className="text-sm text-secondary uppercase">
                   what are you looking for ?
                 </p>
@@ -298,6 +335,21 @@ const Navbar = () => {
                     placeholder="Search"
                     className="w-full border-b border-secondary outline-0 placeholder:text-sm text-sm py-2"
                   />
+                </div>
+                <div>
+                  <ul className="w-min text-nowrap flex flex-col gap-y-2 text-sm">
+                    <p className="font-medium text-secondary uppercase  ">
+                      quick links
+                    </p>
+                    {quickLinks.map((item, index) => (
+                      <li
+                        key={index}
+                        className="text-primary w-min leading-normal cursor-pointer text-xs md:text-sm capitalize relative custom-underline "
+                      >
+                        <Link href={"/"}>{item}</Link>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </Container>
             </div>
@@ -317,7 +369,10 @@ const Navbar = () => {
               0
             </span>
           </div>
-          <div className="hover:cursor-pointer hidden sm:block">
+          <div
+            onClick={lockView}
+            className="hover:cursor-pointer hidden sm:block"
+          >
             <HiOutlineBars3CenterLeft />
           </div>
         </div>
