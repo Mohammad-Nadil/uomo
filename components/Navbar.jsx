@@ -119,11 +119,17 @@ const Navbar = () => {
       title: "",
       subMenus: [
         "about",
-        "contact us",
-        "store location",
+        "location",
         "faq",
-        "coming soon",
+        "cart",
+        "login",
+        "checkout",
+        "order-received",
+        "coming-soon",
         "404 page",
+        "blog",
+        "t&c",
+        "tracking"
       ],
     },
   ];
@@ -171,7 +177,9 @@ const Navbar = () => {
     "contact us",
     "store location",
     "faq",
-    "coming soon",
+    "checkout",
+    "order-recieved",
+    "login",
     "404 page",
   ];
 
@@ -256,7 +264,7 @@ const Navbar = () => {
                 </Container>
               </div>
             </NavLinks>
-            <NavLinks link={"/"} title={"shop"} />
+            <NavLinks link={"/shop"} title={"shop"} />
             <NavLinks link={"/"} title={"collection"} />
             <NavLinks
               link={"/"}
@@ -283,7 +291,7 @@ const Navbar = () => {
                 ))}
               </div>
             </NavLinks>
-            <NavLinks link={"/"} title={"lookbook"} />
+            <NavLinks link={"/lookbook"} title={"lookbook"} />
             <NavLinks
               link={"/"}
               title={"pages"}
@@ -302,7 +310,7 @@ const Navbar = () => {
                         key={index}
                         className="text-primary leading-normal cursor-pointer w-fit h-auto text-xs md:text-sm capitalize relative custom-underline  "
                       >
-                        <Link href={"/"}>{item}</Link>
+                        <Link href={`/${item}`}>{item}</Link>
                       </li>
                     ))}
                   </ul>
@@ -363,12 +371,12 @@ const Navbar = () => {
           <div className="hover:cursor-pointer hidden sm:block">
             <CiHeart />
           </div>
-          <div className="hover:cursor-pointer relative">
+          <Link href={"/cart"} className="hover:cursor-pointer relative">
             <IoBagOutline />
             <span className="absolute top-full left-full -translate-x-4/5 -translate-y-1/2 sm:-translate-1/2  w-4 aspect-square text-[10px] sm:text-xs flex items-center justify-center rounded-full bg-accent text-white">
               0
             </span>
-          </div>
+          </Link>
           <div
             onClick={lockView}
             className="hover:cursor-pointer hidden sm:block"
