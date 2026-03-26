@@ -118,16 +118,12 @@ const Navbar = () => {
     {
       title: "",
       subMenus: [
-        "about",
         "location",
         "faq",
-        "cart",
         "login",
-        "checkout",
         "order-received",
         "coming-soon",
         "404 page",
-        "blog",
         "t&c",
         "tracking"
       ],
@@ -265,10 +261,10 @@ const Navbar = () => {
               </div>
             </NavLinks>
             <NavLinks link={"/shop"} title={"shop"} />
-            <NavLinks link={"/"} title={"collection"} />
+            <NavLinks link={"/about"} title={"about us"} />
             <NavLinks
-              link={"/"}
-              title={"journal"}
+              link={"/blog"}
+              title={"blog"}
               className={" hover:before:w-40"}
             >
               <div

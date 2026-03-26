@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { Image as AntImage } from "antd";
 import React from "react";
 import { MdNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
@@ -11,6 +12,9 @@ import { Navigation } from "swiper/modules";
 import "swiper/css/navigation";
 import { useState } from "react";
 import Product from "@/components/Product";
+import Link from "next/link";
+import Container from "@/components/Container";
+import { CiZoomIn } from "react-icons/ci";
 
 const page = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -28,8 +32,8 @@ const page = () => {
     }
   };
   return (
-    <>
-      <div className="max-w-352.5 mx-auto">
+    <section id="product">
+      <Container className={`pb-10`}>
         <div className="mt-18.5 mb-6  lg:mt-12.5 lg:mb-25">
           <div className="flex flex-col xl:flex-row gap-y-8 xl:gap-x-15">
             {/* Left Side: Images */}
@@ -84,22 +88,14 @@ const page = () => {
                   {[1, 2, 3].map((_, index) => (
                     <SwiperSlide
                       key={index}
-                      className="relative flex justify-center items-center bg-[#F5F5F5]"
+                      className="relative flex justify-center items-center bg-[#F5F5F5] group "
                     >
-                      <Image
+                      <AntImage
                         src={"/images/shop.png"}
                         alt="vvv"
-                        width={712}
-                        height={700}
-                        className="object-contain"
+                        className="object-contain relative z-20"
                       />
-                      <Image
-                        src={"/images/hoverZoom.png"}
-                        alt="vvv"
-                        width={70}
-                        height={70}
-                        className="absolute bottom-4 right-4 lg:bottom-2 lg:right-7.5 cursor-pointer"
-                      />
+                      <CiZoomIn className="absolute bottom-10 right-10 opacity-0 z-30 lg:group-hover:opacity-100 transition-all duration-300 text-3xl lg:text-5xl text-primary" />
                     </SwiperSlide>
                   ))}
                 </Swiper>
@@ -162,9 +158,12 @@ const page = () => {
                     +
                   </button>
                 </div>
-                <button className="h-12  lg:w-70 lg:h-15 bg-primary text-white text-[12px] lg:text-sm lg:font-medium  cursor-pointer uppercase px-10 lg:px-0">
+                <Link
+                  href="/cart"
+                  className="h-12 flex items-center justify-center lg:w-70 lg:h-15 bg-primary text-white text-[12px] lg:text-sm lg:font-medium hover:bg-black/50 duration-300 cursor-pointer uppercase px-10 lg:px-0"
+                >
                   ADD TO CART
-                </button>
+                </Link>
               </div>
 
               {/* Wishlist & Share */}
@@ -199,7 +198,6 @@ const page = () => {
             </div>
           </div>
         </div>
-        {/* vvvvvvvvvvvvvvv */}
         <div className="w-full">
           <div className="flex flex-col sm:flex-row justify-center items-center sm:gap-x-10 xl:gap-x-19 gap-y-6 sm:gap-y-0 text-base font-medium text-secondary">
             {/* DESCRIPTION Button */}
@@ -433,9 +431,8 @@ const page = () => {
               )}
             </div>
           </div>
-          {/* vvvvvvvvvvvvvvv */}
           <div className="mt-7 lg:mt-13.5">
-            <div className="px-60">
+            <div className="px-4 md:px-20 2xl:px-60">
               <h3 className="text-lg font-medium text-primary">
                 Be the first to review “Message Cotton T-Shirt”
               </h3>
@@ -507,7 +504,6 @@ const page = () => {
             </div>
           </div>
         </div>
-        {/* vvvvvvvvvvvvvvv */}
         <div className="mt-9.5 mb-25 hidden lg:block px-10">
           <h3 className="text-[26px] text-primary">
             RELATED <span className="font-bold">PRODUCTS</span>
@@ -536,8 +532,8 @@ const page = () => {
             />
           </div>
         </div>
-      </div>
-    </>
+      </Container>
+    </section>
   );
 };
 

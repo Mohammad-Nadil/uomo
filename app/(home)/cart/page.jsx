@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { RxCross2 } from "react-icons/rx";
 
@@ -53,7 +54,7 @@ const page = () => {
             {/* Left Side: Product Table */}
             <div className="w-full lg:w-2/3 overflow-x-auto">
               {/* Header - Desktop Only */}
-              <div className="hidden md:flex items-center pb-2.5 border-b-2 border-[#E4E4E4] text-[#222222] text-sm font-medium">
+              <div className="hidden md:flex items-center pb-2.5 border-b-2 border-[#E4E4E4] text-primary text-sm font-medium">
                 <h6 className="w-2/5">PRODUCT</h6>
                 <h6 className="w-1/5 text-center">PRICE</h6>
                 <h6 className="w-1/5 text-center">QUANTITY</h6>
@@ -62,14 +63,14 @@ const page = () => {
 
               {/* Product Items */}
               {[
-                { name: "Zessi Dresses", price: 99, sub: 399, meta: "" },
+                { name: "Zees Dresses", price: 99, sub: 399, meta: "" },
                 {
                   name: "Kirby T-Shirt",
                   price: 99,
                   sub: 399,
                   meta: "Color: Yellow Size: L",
                 },
-                { name: "Cableknit Shawl", price: 99, sub: 399, meta: "" },
+                { name: "Cablet Shawl", price: 99, sub: 399, meta: "" },
               ].map((item, idx) => (
                 <div
                   key={idx}
@@ -77,7 +78,7 @@ const page = () => {
                 >
                   {/* Product Info */}
                   <div className="flex items-center w-full md:w-2/5">
-                    <div className="flex-shrink-0">
+                    <div className="shrink-0">
                       <Image
                         src="/images/cart.png"
                         alt="cart"
@@ -87,11 +88,11 @@ const page = () => {
                       />
                     </div>
                     <div className="ml-5">
-                      <p className="text-base text-[#222222] font-medium">
+                      <p className="text-base text-primary font-medium">
                         {item.name}
                       </p>
                       {item.meta && (
-                        <p className="text-xs text-[#767676] mt-1">
+                        <p className="text-xs text-secondary mt-1">
                           {item.meta}
                         </p>
                       )}
@@ -99,7 +100,7 @@ const page = () => {
                   </div>
 
                   {/* Price */}
-                  <p className="w-full md:w-1/5 text-center text-base text-[#767676] flex justify-between md:block">
+                  <p className="w-full md:w-1/5 text-center text-base text-secondary flex justify-between md:block">
                     <span className="md:hidden font-medium">Price:</span> $
                     {item.price}
                   </p>
@@ -115,10 +116,10 @@ const page = () => {
 
                   {/* Subtotal & Remove */}
                   <div className="w-full md:w-1/5 flex items-center justify-between md:justify-end gap-5">
-                    <p className="text-base text-[#222222] font-medium">
+                    <p className="text-base text-primary font-medium">
                       ${item.sub}
                     </p>
-                    <RxCross2 className="text-[#767676] text-lg cursor-pointer hover:text-red-500" />
+                    <RxCross2 className="text-secondary text-lg cursor-pointer hover:text-red-500" />
                   </div>
                 </div>
               ))}
@@ -195,9 +196,9 @@ const page = () => {
                 </div>
               </div>
 
-              <button className="w-full text-sm text-white font-medium py-5 bg-primary mt-5 hover:bg-black transition-all">
+              <Link href="/checkout"  className="w-full flex justify-center items-center text-sm text-white font-medium py-5 bg-primary mt-5 hover:bg-black/50 transition-all">
                 PROCEED TO CHECKOUT
-              </button>
+              </Link>
             </div>
           </div>
         </div>

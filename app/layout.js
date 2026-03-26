@@ -20,7 +20,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${jost.variable} no-scrollbar antialiased `}>
+      <body
+        cz-shortcut-listen="true"
+        className={`${jost.variable} no-scrollbar antialiased `}
+      >
         <Navbar />
         {children}
         <Tab />

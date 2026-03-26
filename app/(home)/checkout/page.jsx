@@ -1,4 +1,5 @@
 import CustomInp from "@/components/CustomInp";
+import Link from "next/link";
 import React from "react";
 
 const page = () => {
@@ -49,90 +50,70 @@ const page = () => {
 
         {/* Content */}
         <div className="lg:flex-row flex-col flex items-start justify-between">
-          {/* Left */}
           <div className="lg:w-232.5 w-95 mx-auto">
-            <h6 className="text-base font-medium text-primary leading-6">
-              BILLING DETAILS
-            </h6>
-            <div className="flex gap-x-7.5 mt-8.5">
-              <input
-                type="text"
-                placeholder="First Name"
-                className="placeholder:text-secondary placeholder:text-sm placeholder:leading-6 p-5 border-2 border-[#E4E4E4] lg:w-112.5 w-1/2"
-              />
-              <input
-                type="text"
-                placeholder="Last Name"
-                className="placeholder:text-secondary placeholder:text-sm placeholder:leading-6 p-5 border-2 border-[#E4E4E4] lg:w-112.5 w-1/2"
-              />
+            <h6 className="text-base font-medium mt-10">BILLING DETAILS</h6>
+
+            {/* Name */}
+            <div className="flex gap-7.5 mt-8.5">
+              <CustomInp label="First Name" name="firstName" />
+              <CustomInp label="Last Name" name="lastName" />
             </div>
-            <input
-              type="text"
-              placeholder="Company Name (optional)"
-              className="placeholder:text-secondary placeholder:text-sm placeholder:leading-6 p-5 border-2 border-[#E4E4E4] w-full my-7.5"
+
+            <CustomInp
+              label="Company Name (optional)"
+              name="company"
+              className="my-7.5"
             />
-            <div className="relative w-full">
-              <label
-                htmlFor="email"
-                className="absolute -top-3 left-4 bg-white pl-1 pr-3 text-sm leading-6 text-primary"
-              >
+
+            {/* Select (same thakbe) */}
+            <div className="relative w-full my-7.5">
+              <label className="absolute -top-3 left-4 bg-white px-2 text-sm">
                 Country / Region *
               </label>
-              <select className="w-full border-2 border-primary p-5 text-sm focus:outline-none">
-                <option className="">Turkey</option>
+              <select className="w-full border-2 border-gray-300 p-5 text-sm focus:border-primary outline-none">
+                <option>Bangladesh</option>
+                <option>Turkey</option>
               </select>
             </div>
-            <input
-              type="text"
-              placeholder="Street Address *"
-              className="placeholder:text-secondary placeholder:text-sm placeholder:leading-6 p-5 border-2 border-[#E4E4E4] w-full mt-7.5"
+
+            <CustomInp label="Street Address *" name="address1" />
+            <CustomInp
+              label="Apartment, suite (optional)"
+              name="address2"
+              className="mt-2.5"
             />
-            <input
-              type="text"
-              className="placeholder:text-secondary placeholder:text-sm placeholder:leading-6 p-5 border-2 border-[#E4E4E4] w-full mt-2.5"
-            />
-            <input
-              type="text"
-              placeholder="Town / City *"
-              className="placeholder:text-secondary placeholder:text-sm placeholder:leading-6 p-5 border-2 border-[#E4E4E4] w-full my-7.5"
-            />
-            <input
-              type="text"
-              placeholder="Postcode / ZIP *"
-              className="placeholder:text-secondary placeholder:text-sm placeholder:leading-6 p-5 border-2 border-[#E4E4E4] w-full"
-            />
-            <input
-              type="text"
-              placeholder="Province *"
-              className="placeholder:text-secondary placeholder:text-sm placeholder:leading-6 p-5 border-2 border-[#E4E4E4] w-full my-7.5"
-            />
-            <input
-              type="text"
-              placeholder="Phone *"
-              className="placeholder:text-secondary placeholder:text-sm placeholder:leading-6 p-5 border-2 border-[#E4E4E4] w-full"
-            />
-            <input
+
+            <CustomInp label="Town / City *" name="city" className="my-7.5" />
+            <CustomInp label="Postcode / ZIP *" name="zip" />
+            <CustomInp label="Province *" name="province" className="my-7.5" />
+            <CustomInp label="Phone *" name="phone" />
+            <CustomInp
+              label="Your Email"
               type="email"
-              placeholder="Your Mail"
-              className="placeholder:text-secondary placeholder:text-sm placeholder:leading-6 p-5 border-2 border-[#E4E4E4] w-full my-7.5"
+              name="email"
+              className="my-7.5"
             />
-            <div className="flex items-center gap-x-2.5">
-              <input type="checkbox" className="" />
-              <p className="text-sm font-medium leading-6 text-primary">
-                CREATE AN ACCOUNT?
-              </p>
+
+            {/* Checkbox */}
+            <div className="flex items-center gap-2.5">
+              <input type="checkbox" />
+              <p className="text-sm font-medium">CREATE AN ACCOUNT?</p>
             </div>
-            <div className="flex items-center gap-x-2.5 mt-3 mb-6.5">
-              <input type="checkbox" className="" />
-              <p className="text-sm font-medium leading-6 text-primary">
+
+            <div className="flex items-center gap-2.5 mt-3 mb-6.5">
+              <input type="checkbox" />
+              <p className="text-sm font-medium">
                 SHIP TO A DIFFERENT ADDRESS?
               </p>
             </div>
+
+            {/* Textarea */}
             <textarea
-              className="placeholder:text-secondary placeholder:text-sm placeholder:leading-6 p-5 border-2 border-[#E4E4E4] w-full h-50"
               placeholder="Order Notes (optional)"
-            ></textarea>
+              className="w-full h-50 border-2 border-gray-300 p-5 outline-none focus:border-primary"
+            />
           </div>
+
           {/* Right */}
           <div className="lg:w-105 w-95 mx-auto mt-5 lg:mt-0">
             <div className="border-2 border-primary px-10 pt-9.5 pb-7.5 w-full">
@@ -229,9 +210,9 @@ const page = () => {
                 <span className="text-[#C32929]">privacy policy.</span>
               </p>
             </div>
-            <button className="text-sm text-white font-medium text-center leading-6 py-5 w-full bg-primary cursor-pointer">
+            <Link href="/order-received" className="text-sm  text-white font-medium text-center leading-6 py-5 w-full! bg-primary hover:bg-black/50 duration-300 cursor-pointer">
               PLACE ORDER
-            </button>
+            </Link>
           </div>
         </div>
       </div>
