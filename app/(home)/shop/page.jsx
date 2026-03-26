@@ -7,8 +7,12 @@ import { IoSearchOutline } from "react-icons/io5";
 import { AiOutlineClose } from "react-icons/ai";
 import placeholder from "@/public/images/img1.png";
 import Image from "next/image";
+import Link from "next/link";
+import { FaBars } from "react-icons/fa";
 
 const page = () => {
+  const [showFilter, setShowFilter] = useState(false);
+  const [quantity, setQuantity] = useState(6);
   const [openSections, setOpenSections] = useState({
     categories: true,
     colors: true,
@@ -23,42 +27,42 @@ const page = () => {
       [section]: !prev[section],
     }));
   };
-  const shopList1 = [
-    { id: 1, title: "#STAYHOME", value: "stayhome" },
-    { id: 2, title: "NEW IN", value: "new-in" },
-    { id: 3, title: "JACKETS", value: "jackets" },
-    { id: 4, title: "HOODIES", value: "hoodies", active: true },
-    { id: 5, title: "MEN", value: "men" },
-    { id: 6, title: "WOMEN", value: "women" },
-    { id: 7, title: "TROUSERS", value: "trousers" },
-    { id: 8, title: "ACCESSORIES", value: "accessories" },
-    { id: 9, title: "SHOES", value: "shoes" },
-  ];
 
   const item1 = {
     id: 3,
     category: "Dresses",
     name: "Cotton Jersey T-Shirt",
     price: "$17",
-    image:
-      "https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Q290dG9uJTIwSmVyc2V5JTIwVC1TaGlydHxlbnwwfHwwfHx8MA%3D%3D",
+    image: placeholder,
   };
   return (
-    <div>
-      <Container className={`flex gap-10`}>
-        <div className="w-1/4 px-3 ">
+    <section id="shop" className="shop">
+      {showFilter && (
+        <div
+          onClick={() => setShowFilter(false)}
+          className="fixed inset-0 bg-black/30 z-40 lg:hidden"
+        />
+      )}
+
+      <Container className={`flex gap-10 relative`}>
+        <div
+          className={` w-3/4 lg:w-1/4 absolute lg:static top-0 left-0 z-50  transition-transform ${showFilter ? "translate-x-0" : "-translate-x-full lg:translate-x-0"} `}
+        >
           <div
-            className={` h-full w-full  bg-white  z-50 transition-transform duration-300 flex flex-col 
-               translate-x-0 
-              `}
+            className={`h-full w-full p-3 bg-white  duration-300 flex flex-col
+     
+    `}
           >
             <div className="z-10 flex justify-between items-center  pb-5">
               <h3 className=" text-head uppercase">Filter By</h3>
-              <button className=" cursor-pointer">
+              <button
+                onClick={() => setShowFilter(false)}
+                className="cursor-pointer lg:hidden"
+              >
                 <AiOutlineClose />
               </button>
             </div>
-            <div className=" flex-1 flex flex-col  gap-y-10">
+            <div className=" flex-1 flex flex-col gap-y-10 overflow-y-auto no-scrollbar">
               {/* Categories */}
               <div className="">
                 <button
@@ -268,8 +272,8 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className="w-3/4 flex flex-col gap-10 pb-10 ">
-          <div className="banner  w-full flex items-center justify-between p-12.5 bg-[#eeeeee]  ">
+        <div className="lg:w-3/4 w-full flex flex-col gap-5 sm:gap-8.5 pb-10 ">
+          <div className="banner  w-full hidden sm:flex items-center justify-between p-6 lg:p-12.5 bg-[#eeeeee]  ">
             <div className="text flex flex-col gap-y-3 uppercase w-max">
               <div className="flex items-center gap-1 text-accent ">
                 <hr className="w-12" />
@@ -280,9 +284,14 @@ const page = () => {
                 <br />
                 <span className="font-bold">womens</span>
               </h2>
-              <a href="/shop" className="custom-underline text-sm font-medium w-min text-nowrap">discover more</a>
+              <a
+                href="/shop"
+                className="custom-underline text-sm font-medium w-min text-nowrap"
+              >
+                discover more
+              </a>
             </div>
-            <div className="img w-1/4 aspect-4/5 relative">
+            <div className="img w-1/3 aspect-4/5 relative">
               <Image
                 fill
                 src={placeholder}
@@ -291,14 +300,43 @@ const page = () => {
               />
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-7.5">
-            {new Array(9).fill(0).map((item, index) => (
+          <div className="flex  items-center gap-x-10 justify-between">
+            <div className="breadcrumb uppercase text-sm font-medium hidden lg:block flex-1">
+              <Link href="/"> home</Link>
+              <span>/</span>
+              <Link href="/shop"> the shop</Link>
+            </div>
+            <div className="filterOpen lg:hidden flex flex-1 items-center">
+              <button
+                onClick={() => setShowFilter(true)}
+                className="flex items-center gap-2"
+              >
+                <FaBars size={16} />
+                <span className="text-sm font-medium">filter</span>
+              </button>
+            </div>
+            <div className="sort  font-medium">
+              <select className=" px-2 py-1">
+                <option>default sorting</option>
+                <option>sort by popularity</option>
+                <option>sort by average rating</option>
+              </select>
+            </div>
+          </div>
+          <div className="grid grid-cols-2  sm:grid-cols-3 gap-3 md:gap-7.5">
+            {new Array(quantity).fill(0).map((item, index) => (
               <ProductCard key={index} item={item1} />
             ))}
           </div>
+          <button
+            onClick={() => setQuantity(quantity + 6)}
+            className="text-sm lg:text-xl custom-underline font-medium text-center mt-5 w-max mx-auto"
+          >
+            show more
+          </button>
         </div>
       </Container>
-    </div>
+    </section>
   );
 };
 

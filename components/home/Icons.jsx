@@ -1,55 +1,49 @@
-import Image from 'next/image'
-import React from 'react'
-import Icon1 from '@/public/icons/shipping.png'
-import Icon2 from '@/public/icons/headphone.png'
-import Icon3 from '@/public/icons/shield.png'
-import Icon4 from '@/public/icons/gift.png'
+import Image from "next/image";
+import React from "react";
+import Icon1 from "@/public/icons/shipping.png";
+import Icon2 from "@/public/icons/headphone.png";
+import Icon3 from "@/public/icons/shield.png";
+import Icon4 from "@/public/icons/gift.png";
+
+const features = [
+  {
+    icon: Icon1,
+    title: "Fast and Free Delivery",
+    desc: "Free delivery for all orders over $140",
+  },
+  {
+    icon: Icon2,
+    title: "24/7 Customer Support",
+    desc: "Friendly 24/7 customer support",
+  },
+  {
+    icon: Icon3,
+    title: "Money Back Guarantee",
+    desc: "We return money within 30 days",
+  },
+  {
+    icon: Icon4,
+    title: "Member Gifts",
+    desc: "Discount coupons weekends",
+  },
+];
 
 const Icons = () => {
   return (
-    <>
-      <section className="max-w-7xl mx-auto px-6 py-16">
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-         <div className="flex gap-3">
-         <Image src={Icon1} alt='1' className="w-8 h-8"/>
-         <div>
-         <h3 className="font-semibold">Fast and Free Delivery</h3>
-         <p className="text-sm text-gray-500">
-         Free delivery for all orders over $140
-         </p>
-         </div>
-         </div>
-         <div className="flex gap-3">
-         <Image src={Icon2} alt='2' className="w-8 h-8"/>
-         <div>
-         <h3 className="font-semibold">24/7 Customer Support</h3>
-         <p className="text-sm text-gray-500">
-         Friendly 24/7 customer support
-         </p>
-         </div>
-         </div>
-         <div className="flex gap-3">
-         <Image src={Icon3} alt='3' className="w-8 h-8"/>
-         <div>
-         <h3 className="font-semibold">Money Back Guarantee</h3>
-         <p className="text-sm text-gray-500">
-         We return money within 30 days
-         </p>
-         </div>
-         </div>
-         <div className="flex gap-3">
-         <Image src={Icon4} alt='4' className="w-8 h-8"/>
-         <div>
-         <h3 className="font-semibold">Member Gifts</h3>
-         <p className="text-sm text-gray-500">
-         Discount coupons weekends
-         </p>
-         </div>
-         </div>
-         </div>
-         </section>
-    </>
-  )
-}
+    <section className="max-w-7xl mx-auto px-6 py-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {features.map((item, index) => (
+          <div key={index} className="flex gap-3">
+            <Image src={item.icon} alt={item.title} className="w-8 h-8" />
+            <div>
+              <h3 className="font-semibold">{item.title}</h3>
+              <p className="text-sm text-gray-500">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
 
-export default Icons
+export default Icons;

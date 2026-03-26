@@ -1,17 +1,21 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { IoCloseOutline } from "react-icons/io5";
 
-const ProductCard = ({ item = {},  }) => {
+const ProductCard = ({ item , crossEnabled = false }) => {
   return (
-    <div className="flex-1 group">
+    <Link href={`/shop/${item.id}`} className="flex-1 group">
       <div className="relative bg-gray-200 aspect-4/5 mb-3 overflow-hidden">
-        <button className="absolute top-2 left-2 z-10 w-6 h-6 bg-white flex items-center justify-center text-gray-500 hover:text-red-600  shadow-sm opacity-0 group-hover:opacity-100 transition-all duration-200">
-          <IoCloseOutline size={16} />
-        </button>
+        {crossEnabled && (
+          <button className="absolute top-2 left-2 z-10 w-6 h-6 bg-white flex items-center justify-center text-gray-500 hover:text-red-600  shadow-sm opacity-0 group-hover:opacity-100 transition-all duration-200">
+            <IoCloseOutline size={16} />
+          </button>
+        )}
 
         {item.image ? (
-          <img
+          <Image
             src={item.image}
             alt={item.name}
             className="w-full h-full object-cover  "
@@ -31,7 +35,7 @@ const ProductCard = ({ item = {},  }) => {
         {item.name}
       </p>
       <p className="text-sm text-gray-800">{item.price}</p>
-    </div>
+    </Link>
   );
 };
 

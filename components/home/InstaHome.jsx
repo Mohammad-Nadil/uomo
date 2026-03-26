@@ -6,7 +6,7 @@ const InstaHome = () => {
   return (
     <div>
       <section className="relative mt-24">
-         <Image src={P_I} alt='' className="w-full h-[350px] md:h-[450px] object-cover"/>
+         <Image src={P_I} alt='' className="w-full h-90 md:h-115 object-cover"/>
          <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
          <h1 className="text-xl md:text-3xl font-semibold mb-4">
          DON'T MISS THE CHANCE TO GET 40% OFF
@@ -16,7 +16,7 @@ const InstaHome = () => {
          <input
          type="text"
          placeholder="Your email address"
-         class="border px-4 py-3 w-72"
+         className="border px-4 py-3 w-72"
          />
          <button className="bg-red-600 text-white px-6 py-3 hover:text-red-500 hover:bg-white hover:border">
          Join

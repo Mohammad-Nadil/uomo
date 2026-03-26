@@ -23,14 +23,14 @@ const Tab = () => {
     },
     {
       id: 3,
-      title: "wishlist",
-      link: "/",
+      title: "cart",
+      link: "/cart",
       icon: CiHeart ,
     },
     {
       id: 4,
       title: "User",
-      link: "/",
+      link: "/dashboard",
       icon: FaRegUserCircle ,
     },
   ];
@@ -39,12 +39,12 @@ const Tab = () => {
       <Container className="flex items-center justify-around  w-full py-3">
         {links.map((item, index) => (
           <Link
-            href={"/"}
+            href={item.link}
             key={index}
             className="no-underline capitalize text-primary flex flex-col justify-center items-center"
           >
             <item.icon className="text-xl" />
-            <span className="text-sm ">home</span>
+            <span className="text-sm ">{item.title}</span>
           </Link>
         ))}
       </Container>
